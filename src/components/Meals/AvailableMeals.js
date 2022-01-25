@@ -1,5 +1,5 @@
 import classes from "../Meals/AvailableMeals.module.css";
-import Wrapper from "../UI/Wrapper";
+import Card from "../UI/Card";
 import MealItem from "./MealItem/MealItem";
 
 const DUMMY_MEALS = [
@@ -32,9 +32,15 @@ const DUMMY_MEALS = [
 const AvailableMeals = () => {
   return (
     <section className={classes.meals}>
-      <Wrapper>
-        {DUMMY_MEALS.map(meal => <MealItem key={meal.id} name={meal.name} description={meal.description} price={meal.price} />)}
-      </Wrapper>
+      <Card>
+        {DUMMY_MEALS.map(meal => <MealItem
+          id={meal.id}
+          key={meal.id}
+          name={meal.name}
+          description={meal.description}
+          price={meal.price}
+        />)}
+      </Card>
     </section>
   )
 }
